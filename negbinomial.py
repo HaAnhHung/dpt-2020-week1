@@ -26,23 +26,17 @@ def infoMeasure(n, p, N):
     return 0-math.log2(px)
 
 
-def sumProb(N, p):
-    '''
-    Ham sumProb co the dung de kiem chung tong xac suat cua phan bo negbinomial = 1
-    sumProb(10, 0.5) xap xi 1
-    sumProb(20, 0.5) xap xi 1
-    sumProb(30, 0.5) xap xi 1
-    '''
+def sumProb(N, p, r):
     sum: float = 0
-    for i in range(N+1, 99999):
-        sum += prob(N, p, i)
+    for i in range(r, N + 1):
+        sum += prob(r, p, i)
     return sum
 
 
-def approxEntropy(N, p):
+def approxEntropy(N, p, r):
     sum = 0
-    for i in range(N+1, 9999):
-        sum += infoMeasure(N, p, i) * prob(N, p, i)
+    for i in range(r, N+1):
+        sum += infoMeasure(r, p, i) * prob(r, p, i)
     return sum
 
 
