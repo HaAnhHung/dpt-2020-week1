@@ -28,7 +28,7 @@ def infoMeasure(n, p, N):
 
 def sumProb(N, p):
     sum: float = 0
-    for i in range(1, N):
+    for i in range(1, N + 1):
         sum += prob(i, p, N)
     return sum
 
