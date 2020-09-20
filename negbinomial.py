@@ -27,6 +27,10 @@ def infoMeasure(n, p, N):
 
 
 def sumProb(N, p, r):
+    '''
+    sumProb(5, 0.5, 1) = 0.96875
+    sumProb(5, 0.5, 2) = 0.8125
+    '''
     sum: float = 0
     for i in range(r, N + 1):
         sum += prob(r, p, i)
@@ -34,6 +38,14 @@ def sumProb(N, p, r):
 
 
 def approxEntropy(N, p, r):
+    '''
+    Ham approxEntropy tinh xap xi entropy cua nguon tin negative binomial, duoc tinh bang tong cua cac xac suat nhan voi luong thong
+    tin tuong ung.
+    approxEntropy(5, 0.5, 1) = 1.78125
+    approxEntropy(5, 0.5, 2) = 1.8278195311147831
+    approxEntropy(5, 0.5, 3) = 1.2806390622295665
+    approxEntropy(5, 0.5, 4) = 0.625
+    '''
     sum = 0
     for i in range(r, N+1):
         sum += infoMeasure(r, p, i) * prob(r, p, i)
