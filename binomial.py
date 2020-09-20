@@ -48,5 +48,3 @@ def approxEntropy(N, p):
     return sum
 
 
-if __name__ == '__main__':
-    print(approxEntropy(100, 0.5))
