@@ -43,3 +43,7 @@ def approxEntropy(N, p):
     for x in range(1, N + 1):
         sum += infoMeasure(x, p) * prob(x, p)
     return sum
+
+
+if __name__ == '__main__':
+    print(sumProb(2, 0.5))
