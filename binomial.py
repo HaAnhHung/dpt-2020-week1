@@ -34,6 +34,11 @@ def sumProb(N, p):
 
 
 def approxEntropy(N, p):
+    '''
+    approxEntropy(50, 0.5) = 3.8689735330246795
+    approxEntropy(10, 0.5) = 2.706428963227331
+    approxEntropy(1, 0.5) = 1
+    '''
     sum: float = 0
     for x in range(0, N + 1):
         sum += infoMeasure(x, p, N) * prob(x, p, N)
