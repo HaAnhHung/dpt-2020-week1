@@ -27,22 +27,21 @@ def infoMeasure(n, p, N):
 
 
 def sumProb(N, p):
+    '''
+    Ham sumProb co the dung de kiem chung tong xac suat cua phan bo negbinomial = 1
+    sumProb(10, 0.5) xap xi 1
+    sumProb(20, 0.5) xap xi 1
+    sumProb(30, 0.5) xap xi 1
+    '''
     sum: float = 0
-    for i in range(1, N + 1):
-        sum += prob(i, p, N)
+    for i in range(N+1, 99999):
+        sum += prob(N, p, i)
     return sum
 
 
 def approxEntropy(N, p):
-    '''
-        Ham approxEntropy tinh xap xi entropy cua nguon tin binomial, duoc tinh bang tong cua cac xac suat nhan voi luong thong
-        tin tuong ung.
-        approxEntropy(2, 0.5) = 1
-        approxEntropy(50, 0.5) = 1.9999999999999538
-        approxEntropy(1000, 0.5) = 1.9999999999999998
-    '''
     sum = 0
-    for i in range(1, N + 1):
+    for i in range(N+1, 9999):
         sum += infoMeasure(N, p, i) * prob(N, p, i)
     return sum
 
