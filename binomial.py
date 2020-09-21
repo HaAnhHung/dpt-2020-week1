@@ -21,11 +21,11 @@ def infoMeasure(n, p, N):
 def sumProb(N, p):
     '''
         Ham sumProb co the dung de kiem chung tong xac suat cua phan bo binomial = 1
-        sumProb(50, 0.5) = 0.9999999999999991
-        sumProb(100, 0.5) : xap xi 1
-        sumProb(50, 0.2) = 0.9999857275230759
-        sumProb(100, 0.2) = 0.9999999997963016
-        sumProb(500, 0.2) : xap xi 1
+        sumProb(50, 0.5) = 1
+        sumProb(100, 0.5) = 1
+        sumProb(50, 0.2) = 1
+        sumProb(100, 0.2) = 1
+        sumProb(500, 0.2) = 1
     '''
     sum: float = 0
     for x in range(0, N + 1):
